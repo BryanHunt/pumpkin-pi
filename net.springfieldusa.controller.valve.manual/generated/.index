@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<repository increment="1468641709294" name="net.springfieldusa.controller.valve.manual" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="net.springfieldusa.controller.valve.manual"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" type="Version" value="0.0.0.201607160401"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="osgi.content" value="9b3a02cd32425b40ac3c1e3468c510292e0af99d820c6724fb48193c11d9cfa6"/>
+      <attribute name="url" value="generated/net.springfieldusa.controller.valve.manual.jar"/>
+      <attribute name="size" type="Long" value="6329"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="osgi.wiring.bundle" value="net.springfieldusa.controller.valve.manual"/>
+      <attribute name="bundle-version" type="Version" value="0.0.0.201607160401"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="osgi.wiring.host" value="net.springfieldusa.controller.valve.manual"/>
+      <attribute name="bundle-version" type="Version" value="0.0.0.201607160401"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <attribute name="objectClass" type="List&lt;String&gt;" value="net.springfieldusa.controller.valve.manual.comp.ManualValveController"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <attribute name="objectClass" type="List&lt;String&gt;" value="net.springfieldusa.controller.valve.manual.comp.ManualValveController"/>
+      <attribute name="osgi.command.function" type="List&lt;String&gt;" value="openValve,closeValve,listValves"/>
+      <attribute name="osgi.command.scope" value="valve"/>
+      <directive name="uses" value="net.springfieldusa.controller.valve.manual.comp"/>
+    </capability>
+    <capability namespace="bndtools.workspace">
+      <attribute name="bndtools.workspace" value="file:/Users/bhunt/Documents/Code/Workspaces/pi"/>
+      <attribute name="project.path" value="/net.springfieldusa.controller.valve.manual"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=net.springfieldusa.device.valve)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=net.springfieldusa.device.valve.Valve)"/>
+      <directive name="effective" value="active"/>
+      <directive name="resolution" value="optional"/>
+      <directive name="cardinality" value="multiple"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=net.springfieldusa.device.valve.Valve)"/>
+      <directive name="resolution" value="optional"/>
+      <directive name="cardinality" value="multiple"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+  </resource>
+</repository>

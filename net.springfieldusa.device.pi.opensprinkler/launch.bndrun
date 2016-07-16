@@ -1,0 +1,36 @@
+#-runfw: org.apache.felix.framework;version=5
+#-runee: JavaSE-1.7
+
+-runsystemcapabilities: ${native_capability}
+
+-resolve.effective: active;skip:="osgi.service"
+
+-runbundles: \
+	org.apache.felix.gogo.runtime,\
+	org.apache.felix.gogo.shell,\
+	org.apache.felix.gogo.command,\
+	pi4j-core,\
+	pi4j-service,\
+	org.eclipselabs.emeta.api,\
+	org.apache.felix.configadmin,\
+	org.apache.felix.eventadmin,\
+	org.apache.felix.http.jetty,\
+	org.apache.felix.log,\
+	org.apache.felix.metatype,\
+	org.apache.felix.scr,\
+	org.apache.felix.webconsole,\
+	org.apache.felix.webconsole.plugins.ds,\
+	javax.servlet;version=3.1.0,\
+	net.springfieldusa.comp;version=latest,\
+	net.springfieldusa.controller.valve.fill;version=latest,\
+	net.springfieldusa.device.pi.opensprinkler;version=latest,\
+	net.springfieldusa.device.pi.sensor.contact.comp;version=latest,\
+	net.springfieldusa.device.sensor.contact.api;version=latest,\
+	net.springfieldusa.device.valve.api;version=latest,\
+	net.springfieldusa.controller.valve.manual;version=latest
+
+-runrequires:\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)'
+-runfw: org.apache.felix.framework;version='[5.4.0,5.4.0]'
+-runee: JavaSE-1.8

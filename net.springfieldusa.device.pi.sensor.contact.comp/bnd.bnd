@@ -1,0 +1,20 @@
+-buildpath: \
+	osgi.annotation;version=6.0.1,\
+	osgi.core;version=6.0,\
+	osgi.cmpn;version=6.0,\
+	pi4j-core;version=1.0,\
+	pi4j-service;version=1.0,\
+	net.springfieldusa.comp;version=latest,\
+	net.springfieldusa.device.sensor.contact.api;version=latest
+
+-testpath: \
+	${junit}
+
+javac.source: 1.8
+javac.target: 1.8
+
+Bundle-Version: 0.0.0.${tstamp}
+Private-Package: net.springfieldusa.device.pi.sensor.contact.comp
+-dsannotations: *
+-dsannotations-options: inherit
+Include-Resource: OSGI-INF/metatype=OSGI-INF/metatype

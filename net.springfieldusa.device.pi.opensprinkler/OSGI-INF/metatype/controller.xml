@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaData xmlns="http://www.osgi.org/xmlns/metatype/v1.1.0">
+	<OCD name="Open Sprinkler" id="net.springfieldusa.device.opensprinkler" description="Open Sprinkler controller configuration">
+		<AD name="Name" id="name" type="String" description="The identifiable name of the device"/>
+		<AD name="Zones" id="numberZones" type="Integer" description="The number of zones"/>
+	</OCD>
+	<Designate pid="net.springfieldusa.device.pi.opensprinkler.comp.OpenSprinkler">
+		<Object ocdref="net.springfieldusa.device.opensprinkler"/>
+	</Designate>
+</MetaData>

@@ -1,0 +1,23 @@
+-buildpath: \
+	osgi.annotation;version=6.0.1,\
+	osgi.core;version=6.0,\
+	osgi.cmpn;version=6.0,\
+	pi4j-core;version=1.0,\
+	pi4j-service;version=1.0,\
+	net.springfieldusa.device.valve.api;version=latest,\
+	net.springfieldusa.comp;version=latest,\
+	org.eclipselabs.emeta.api;version=1.0
+
+-testpath: \
+	${junit}
+
+javac.source: 1.8
+javac.target: 1.8
+
+Bundle-Version: 0.0.0.${tstamp}
+Private-Package: \
+	net.springfieldusa.device.pi.opensprinkler.comp,\
+	net.springfieldusa.device.pi.opensprinkler.meta
+-dsannotations: *
+-dsannotations-options: inherit
+Include-Resource: OSGI-INF/metatype=OSGI-INF/metatype

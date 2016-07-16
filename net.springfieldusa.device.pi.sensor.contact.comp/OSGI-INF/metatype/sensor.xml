@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaData xmlns="http://www.osgi.org/xmlns/metatype/v1.1.0">
+	<OCD name="Contact Sensor" id="net.springfieldusa.device.sensor.contact" description="Contact Sensor configuration">
+		<AD name="Name" id="name" type="String" description="The identifiable name of the device"/>
+		<AD name="GPIO Pin" id="sensorPinNumber" type="Integer" description="The GPIO pin number connected to the sensor"/>
+		<AD name="GPIO Pin Pull Resistance" id="pinPullResistance" type="String" description="The GPIO pin internal pull resistance" default="OFF">
+			<Option label="OFF" value="OFF"/>
+			<Option label="PULL_UP" value="PULL_UP"/>
+			<Option label="PULL_DOWN" value="PULL_DOWN"/>
+		</AD>
+		<AD name="GPIO Pin Active High" id="activeHigh" type="Boolean" description="The GPIO pin assertion level" default="true"/>		
+	</OCD>
+	<Designate factoryPid="net.springfieldusa.device.pi.sensor.contact.comp.ContactSensorComponent">
+		<Object ocdref="net.springfieldusa.device.sensor.contact"/>
+	</Designate>
+</MetaData>
