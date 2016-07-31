@@ -14,7 +14,7 @@
 javac.source: 1.8
 javac.target: 1.8
 
-Bundle-Version: 0.0.0.${tstamp}
+Bundle-Version: 1.0.0.${tstamp}
 Private-Package: \
 	net.springfieldusa.device.pi.opensprinkler.comp,\
 	net.springfieldusa.device.pi.opensprinkler.meta
