@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1468641701014" name="net.springfieldusa.device.pi.sensor.contact.comp" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1469985581206" name="net.springfieldusa.device.pi.sensor.contact.comp" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="net.springfieldusa.device.pi.sensor.contact.comp"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="0.0.0.201607160401"/>
+      <attribute name="version" type="Version" value="0.0.0.201607311719"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="1318b1b1141e113f18a5fcad3fef242c0bdac6689b4265281fac399be07dc4c2"/>
+      <attribute name="osgi.content" value="7c550e673309ae9b876794a6891d0e22591844e7dad9128ec61875a5dcda776a"/>
       <attribute name="url" value="generated/net.springfieldusa.device.pi.sensor.contact.comp.jar"/>
-      <attribute name="size" type="Long" value="8753"/>
+      <attribute name="size" type="Long" value="9657"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="net.springfieldusa.device.pi.sensor.contact.comp"/>
-      <attribute name="bundle-version" type="Version" value="0.0.0.201607160401"/>
+      <attribute name="bundle-version" type="Version" value="0.0.0.201607311719"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="net.springfieldusa.device.pi.sensor.contact.comp"/>
-      <attribute name="bundle-version" type="Version" value="0.0.0.201607160401"/>
+      <attribute name="bundle-version" type="Version" value="0.0.0.201607311719"/>
     </capability>
     <capability namespace="osgi.service">
       <attribute name="objectClass" type="List&lt;String&gt;" value="net.springfieldusa.device.sensor.contact.ContactSensor"/>
     </capability>
     <capability namespace="osgi.service">
       <attribute name="objectClass" type="List&lt;String&gt;" value="net.springfieldusa.device.sensor.contact.ContactSensor"/>
+      <attribute name="debounceTime" type="Long" value="10000"/>
       <attribute name="activeHigh" value="true"/>
       <attribute name="pinPullResistance" value="OFF"/>
       <directive name="uses" value="net.springfieldusa.device.sensor.contact"/>

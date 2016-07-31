@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1468641709083" name="net.springfieldusa.device.pi.opensprinkler" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1469985581567" name="net.springfieldusa.device.pi.opensprinkler" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="net.springfieldusa.device.pi.opensprinkler"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="0.0.0.201607160401"/>
+      <attribute name="version" type="Version" value="0.0.0.201607311719"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="a9b8ff6de01a07799f27d582f1130c5cd310d0b709030e671ca1f138297e0cc6"/>
+      <attribute name="osgi.content" value="fa90b3bc51e8df63d643813025fc53f3922c5b7486ae6fc533d98019b2c4c363"/>
       <attribute name="url" value="generated/net.springfieldusa.device.pi.opensprinkler.jar"/>
-      <attribute name="size" type="Long" value="21261"/>
+      <attribute name="size" type="Long" value="21262"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="net.springfieldusa.device.pi.opensprinkler"/>
-      <attribute name="bundle-version" type="Version" value="0.0.0.201607160401"/>
+      <attribute name="bundle-version" type="Version" value="0.0.0.201607311719"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="net.springfieldusa.device.pi.opensprinkler"/>
-      <attribute name="bundle-version" type="Version" value="0.0.0.201607160401"/>
+      <attribute name="bundle-version" type="Version" value="0.0.0.201607311719"/>
     </capability>
     <capability namespace="osgi.service">
       <attribute name="objectClass" type="List&lt;String&gt;" value="net.springfieldusa.device.pi.opensprinkler.comp.OpenSprinkler"/>

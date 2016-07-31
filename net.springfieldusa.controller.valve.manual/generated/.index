@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1468641709294" name="net.springfieldusa.controller.valve.manual" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1469985581711" name="net.springfieldusa.controller.valve.manual" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="net.springfieldusa.controller.valve.manual"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="0.0.0.201607160401"/>
+      <attribute name="version" type="Version" value="0.0.0.201607311719"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="9b3a02cd32425b40ac3c1e3468c510292e0af99d820c6724fb48193c11d9cfa6"/>
+      <attribute name="osgi.content" value="d44dce5f51f19c63bde68d4164044f84355aa92af46a1cef374107cf658d3247"/>
       <attribute name="url" value="generated/net.springfieldusa.controller.valve.manual.jar"/>
-      <attribute name="size" type="Long" value="6329"/>
+      <attribute name="size" type="Long" value="6331"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="net.springfieldusa.controller.valve.manual"/>
-      <attribute name="bundle-version" type="Version" value="0.0.0.201607160401"/>
+      <attribute name="bundle-version" type="Version" value="0.0.0.201607311719"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="net.springfieldusa.controller.valve.manual"/>
-      <attribute name="bundle-version" type="Version" value="0.0.0.201607160401"/>
+      <attribute name="bundle-version" type="Version" value="0.0.0.201607311719"/>
     </capability>
     <capability namespace="osgi.service">
       <attribute name="objectClass" type="List&lt;String&gt;" value="net.springfieldusa.controller.valve.manual.comp.ManualValveController"/>

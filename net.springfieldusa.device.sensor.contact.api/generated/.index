@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1468641700855" name="net.springfieldusa.device.sensor.contact.api" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1469985580994" name="net.springfieldusa.device.sensor.contact.api" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="net.springfieldusa.device.sensor.contact.api"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="1.0.0.201607160401"/>
+      <attribute name="version" type="Version" value="1.0.0.201607311719"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="9692c6dde1b2619365167c25e2140c1190bcad3a313f6f1c48e78d694ddc1fd2"/>
+      <attribute name="osgi.content" value="af2106bc523602b62571ea00eb033f9b72f1a0bf6421c5cbc2bce9d56c9dc427"/>
       <attribute name="url" value="generated/net.springfieldusa.device.sensor.contact.api.jar"/>
       <attribute name="size" type="Long" value="5109"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="net.springfieldusa.device.sensor.contact.api"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201607160401"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201607311719"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="net.springfieldusa.device.sensor.contact.api"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201607160401"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201607311719"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <attribute name="osgi.wiring.package" value="net.springfieldusa.device.sensor.contact"/>
       <attribute name="version" type="Version" value="1.0.0"/>
       <attribute name="bundle-symbolic-name" value="net.springfieldusa.device.sensor.contact.api"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201607160401"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201607311719"/>
     </capability>
     <capability namespace="bndtools.workspace">
       <attribute name="bndtools.workspace" value="file:/Users/bhunt/Documents/Code/Workspaces/pi"/>

@@ -39,12 +39,16 @@ public class ValveFillController extends AbstractComponent implements ContactSen
   {
     name = config.name();
     fillTimeout = config.fillTimeout() * 60000;
+    
+    if(sensor.isActive())
+      openValve();
   }
 
   @Deactivate
   public void deactivate()
   {
     sensor.removeListener(this);
+    closeValve();
   }
 
   @Override
@@ -65,6 +69,7 @@ public class ValveFillController extends AbstractComponent implements ContactSen
   @Reference
   public void bindContactSensor(ContactSensor sensor)
   {
+    this.sensor = sensor;
     sensor.addListener(this);
   }
 
