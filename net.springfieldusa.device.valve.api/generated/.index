@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1469985581339" name="net.springfieldusa.device.valve.api" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1469985624890" name="net.springfieldusa.device.valve.api" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="net.springfieldusa.device.valve.api"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="1.0.0.201607311719"/>
+      <attribute name="version" type="Version" value="1.0.0.201607311720"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="db40e32bc47fc626359668349f54a56106caddbc2b25d3d8926f9a1d5db1dedc"/>
+      <attribute name="osgi.content" value="7a80f6037c0a41ed5863ed3102e0554d4c6b4a11702a76da54e971cb10320390"/>
       <attribute name="url" value="generated/net.springfieldusa.device.valve.api.jar"/>
-      <attribute name="size" type="Long" value="3715"/>
+      <attribute name="size" type="Long" value="3712"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="net.springfieldusa.device.valve.api"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201607311719"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201607311720"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="net.springfieldusa.device.valve.api"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201607311719"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201607311720"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <attribute name="osgi.wiring.package" value="net.springfieldusa.device.valve"/>
       <attribute name="version" type="Version" value="1.0.0"/>
       <attribute name="bundle-symbolic-name" value="net.springfieldusa.device.valve.api"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201607311719"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201607311720"/>
     </capability>
     <capability namespace="bndtools.workspace">
       <attribute name="bndtools.workspace" value="file:/Users/bhunt/Documents/Code/Workspaces/pi"/>

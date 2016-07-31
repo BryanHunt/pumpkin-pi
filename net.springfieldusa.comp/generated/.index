@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1469985580863" name="net.springfieldusa.comp" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1469985624799" name="net.springfieldusa.comp" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="net.springfieldusa.comp"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="1.0.0.201607311719"/>
+      <attribute name="version" type="Version" value="1.0.0.201607311720"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="2bacde2486fc192a4baed6889599f5d72cfb96492f035653f2034d11692e19a0"/>
+      <attribute name="osgi.content" value="2fa912e84e7bb315a2a239959955641980dfb7a4369e2cd388c88cb8c57b379b"/>
       <attribute name="url" value="generated/net.springfieldusa.comp.jar"/>
-      <attribute name="size" type="Long" value="3983"/>
+      <attribute name="size" type="Long" value="3979"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="net.springfieldusa.comp"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201607311719"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201607311720"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="net.springfieldusa.comp"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201607311719"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201607311720"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <attribute name="osgi.wiring.package" value="net.springfieldusa.comp"/>
       <attribute name="version" type="Version" value="1.0.0"/>
       <attribute name="bundle-symbolic-name" value="net.springfieldusa.comp"/>
-      <attribute name="bundle-version" type="Version" value="1.0.0.201607311719"/>
+      <attribute name="bundle-version" type="Version" value="1.0.0.201607311720"/>
       <directive name="uses" value="org.osgi.service.log"/>
     </capability>
     <capability namespace="bndtools.workspace">
