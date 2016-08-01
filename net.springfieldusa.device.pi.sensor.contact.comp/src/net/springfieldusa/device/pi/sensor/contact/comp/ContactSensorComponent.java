@@ -52,7 +52,7 @@ public class ContactSensorComponent extends AbstractComponent implements Contact
   private boolean activeHigh;
   private long debounceTime;
   private CopyOnWriteArraySet<ContactSensorListener> listeners = new CopyOnWriteArraySet<>();
-  private Boolean debouncing;
+  private Boolean debouncing = false;
 
   @Activate
   public void activate(Config config)
