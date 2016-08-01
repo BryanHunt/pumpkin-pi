@@ -70,7 +70,10 @@ public class ContactSensorComponent extends AbstractComponent implements Contact
   public void deactivate()
   {
     if (sensorPin != null)
+    {
       sensorPin.removeListener(this);
+      gpioService.unprovisionPin(sensorPin);
+    }
   }
 
   @Override
