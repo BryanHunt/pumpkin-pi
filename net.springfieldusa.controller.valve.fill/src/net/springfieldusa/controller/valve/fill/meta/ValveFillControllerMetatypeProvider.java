@@ -49,7 +49,8 @@ public class ValveFillControllerMetatypeProvider implements MetaTypeProvider
     nameAttribute.setDescription("The valve name");
 
     IntegerAttributeDefinitionImpl fillTimeoutAttribute = new IntegerAttributeDefinitionImpl("fillTimeout", "Fill Timeout");
-    fillTimeoutAttribute.setDescription("Fill timeout in minutes");
+    fillTimeoutAttribute.setDescription("Fill timeout in ms");
+    fillTimeoutAttribute.setDefaultValue(new String[] {"30000"});
     
     ObjectClassDefinitionImpl ocd = new ObjectClassDefinitionImpl("net.springfieldusa.controller.valve.fill.comp.ValveFillController", "Valve Fill Controller", "Valve fill controller configuration");
     ocd.addRequiredAttribute(nameAttribute);

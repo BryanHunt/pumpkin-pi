@@ -25,7 +25,7 @@ public class ValveFillController extends AbstractComponent implements ContactSen
   {
     String name();
 
-    long fillTimeout() default 1;
+    long fillTimeout() default 30000;
   }
 
   private volatile Valve valve;
@@ -38,7 +38,7 @@ public class ValveFillController extends AbstractComponent implements ContactSen
   public void activate(Config config)
   {
     name = config.name();
-    fillTimeout = config.fillTimeout() * 60000;
+    fillTimeout = config.fillTimeout();
     
     if(sensor.isActive())
       openValve();
