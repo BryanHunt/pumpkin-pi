@@ -25,22 +25,30 @@ public class ValveFillController extends AbstractComponent implements ContactSen
   {
     String name();
 
-    long fillTimeout() default 30000;
+    long startDelay() default 0;
+
+    long stopDelay() default 0;
+
+    long fillTimeout() default 0;
   }
 
   private volatile Valve valve;
   private volatile ContactSensor sensor;
   private String name;
+  private long startDelay;
+  private long stopDelay;
   private long fillTimeout;
   private Thread fillTimer;
+  private Thread startFillThread;
+  private Thread stopFillThread;
 
   @Activate
   public void activate(Config config)
   {
     name = config.name();
     fillTimeout = config.fillTimeout();
-    
-    if(sensor.isActive())
+
+    if (sensor.isActive())
       openValve();
   }
 
@@ -55,9 +63,36 @@ public class ValveFillController extends AbstractComponent implements ContactSen
   public void sensorStateChanged(boolean active)
   {
     if (active)
-      openValve();
+    {
+      startFillThread = new Thread(() -> {
+        try
+        {
+          Thread.sleep(startDelay);
+        }
+        catch (InterruptedException e)
+        {}
+
+        if(sensor.isActive())
+          openValve();
+      });
+      
+      startFillThread.start();
+    }
     else
-      closeValve();
+    {
+      stopFillThread = new Thread(() -> {
+        try
+        {
+          Thread.sleep(stopDelay);
+        }
+        catch (InterruptedException e)
+        {}
+        
+        closeValve();
+      });
+
+      stopFillThread.start();
+    }
   }
 
   @Reference(unbind = "-")
@@ -94,7 +129,7 @@ public class ValveFillController extends AbstractComponent implements ContactSen
           catch (InterruptedException e)
           {}
         });
-        
+
         fillTimer.start();
       });
     }
@@ -108,7 +143,9 @@ public class ValveFillController extends AbstractComponent implements ContactSen
   {
     if (valve.isOpen())
     {
-      fillTimer.interrupt();
+      if(fillTimer != null)
+        fillTimer.interrupt();
+      
       valve.close();
       log(LogService.LOG_INFO, name + " has stopped filling");
     }

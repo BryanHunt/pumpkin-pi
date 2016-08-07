@@ -48,12 +48,22 @@ public class ValveFillControllerMetatypeProvider implements MetaTypeProvider
     AttributeDefinitionImpl nameAttribute = new AttributeDefinitionImpl("name", "Name", AttributeDefinition.STRING);
     nameAttribute.setDescription("The valve name");
 
+    IntegerAttributeDefinitionImpl startDelayAttribute = new IntegerAttributeDefinitionImpl("startDelay", "Start Delay");
+    startDelayAttribute.setDescription("Delay after start event to begin fill");
+    startDelayAttribute.setDefaultValue(new String[] {"0"});
+
+    IntegerAttributeDefinitionImpl stopDelayAttribute = new IntegerAttributeDefinitionImpl("stopDelay", "Stop Delay");
+    stopDelayAttribute.setDescription("Delay after full event to stop fill");
+    stopDelayAttribute.setDefaultValue(new String[] {"0"});
+
     IntegerAttributeDefinitionImpl fillTimeoutAttribute = new IntegerAttributeDefinitionImpl("fillTimeout", "Fill Timeout");
     fillTimeoutAttribute.setDescription("Fill timeout in ms");
-    fillTimeoutAttribute.setDefaultValue(new String[] {"30000"});
+    fillTimeoutAttribute.setDefaultValue(new String[] {"0"});
     
     ObjectClassDefinitionImpl ocd = new ObjectClassDefinitionImpl("net.springfieldusa.controller.valve.fill.comp.ValveFillController", "Valve Fill Controller", "Valve fill controller configuration");
     ocd.addRequiredAttribute(nameAttribute);
+    ocd.addRequiredAttribute(startDelayAttribute);
+    ocd.addRequiredAttribute(stopDelayAttribute);
     ocd.addRequiredAttribute(fillTimeoutAttribute);
     ocd.addRequiredAttribute(valveAttribute);
     ocd.addRequiredAttribute(contactSensorAttribute);
