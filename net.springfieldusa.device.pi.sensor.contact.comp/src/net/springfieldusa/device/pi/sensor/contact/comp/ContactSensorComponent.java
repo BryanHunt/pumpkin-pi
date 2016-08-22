@@ -10,14 +10,17 @@
  *******************************************************************************/
 package net.springfieldusa.device.pi.sensor.contact.comp;
 
-import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ConfigurationPolicy;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
-import org.osgi.service.log.LogService;
+import org.osgi.service.event.Event;
+import org.osgi.service.event.EventAdmin;
+import org.osgi.service.event.EventConstants;
 
 import com.pi4j.io.gpio.GpioPinDigitalInput;
 import com.pi4j.io.gpio.PinPullResistance;
@@ -28,7 +31,6 @@ import com.pi4j.io.gpio.service.GpioService;
 
 import net.springfieldusa.comp.AbstractComponent;
 import net.springfieldusa.device.sensor.contact.ContactSensor;
-import net.springfieldusa.device.sensor.contact.ContactSensorListener;
 
 @Component(service = ContactSensor.class, configurationPolicy = ConfigurationPolicy.REQUIRE)
 public class ContactSensorComponent extends AbstractComponent implements ContactSensor, GpioPinListenerDigital
@@ -48,10 +50,10 @@ public class ContactSensorComponent extends AbstractComponent implements Contact
 
   private String name;
   private volatile GpioService gpioService;
+  private volatile EventAdmin eventAdmin;
   private GpioPinDigitalInput sensorPin;
   private boolean activeHigh;
   private long debounceTime;
-  private CopyOnWriteArraySet<ContactSensorListener> listeners = new CopyOnWriteArraySet<>();
   private Boolean debouncing = false;
 
   @Activate
@@ -83,28 +85,26 @@ public class ContactSensorComponent extends AbstractComponent implements Contact
   }
 
   @Override
-  public void addListener(ContactSensorListener listener)
+  public String getName()
   {
-    listeners.add(listener);
+    return name;
   }
-
-  @Override
-  public void removeListener(ContactSensorListener listener)
-  {
-    listeners.remove(listener);
-  }
-
+  
   @Reference(unbind = "-")
   public void bindGpioService(GpioService gpioService)
   {
     this.gpioService = gpioService;
   }
 
+  @Reference(unbind = "-")
+  public void bindEventAdmin(EventAdmin eventAdmin)
+  {
+    this.eventAdmin = eventAdmin;
+  }
+  
   @Override
   public void handleGpioPinDigitalStateChangeEvent(GpioPinDigitalStateChangeEvent event)
   {
-    log(LogService.LOG_INFO, "Sensor '" + name + "' is " + event.getState());
-
     synchronized (debouncing)
     {
       if (!debouncing)
@@ -125,8 +125,11 @@ public class ContactSensorComponent extends AbstractComponent implements Contact
 
           if (lastActive == active)
           {
-            for (ContactSensorListener listener : listeners)
-              listener.sensorStateChanged(active);
+            Map<String, Object> properties = new HashMap<>();
+            properties.put("name", name);
+            properties.put(EventConstants.TIMESTAMP, System.currentTimeMillis());
+            properties.put("active", active);
+            eventAdmin.sendEvent(new Event(SENSOR_CHANGE_EVENT, properties));
           }
           
           synchronized (debouncing)

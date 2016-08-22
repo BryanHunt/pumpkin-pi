@@ -24,7 +24,7 @@ import org.osgi.annotation.versioning.ProviderType;
 @ProviderType
 public interface ContactSensor
 {
+  String SENSOR_CHANGE_EVENT = "net/springfieldusa/device/sensor/contact";
+  String getName();
   boolean isActive();
-  void addListener(ContactSensorListener listener);
-  void removeListener(ContactSensorListener listener);
 }

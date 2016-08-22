@@ -35,10 +35,10 @@ public class ValveFillControllerMetatypeProvider implements MetaTypeProvider
 
   public ValveFillControllerMetatypeProvider()
   {
-    valveAttribute = new ServiceChoiceAttributeDefinitionImpl("valve", "Valve", "name");
+    valveAttribute = new ServiceChoiceAttributeDefinitionImpl("Valve", "Valve", "name");
     valveAttribute.setDescription("The valve to use for filling");
 
-    contactSensorAttribute = new ServiceChoiceAttributeDefinitionImpl("contactSensor", "Contact Sensor", "name");
+    contactSensorAttribute = new ServiceChoiceAttributeDefinitionImpl("ContactSensor", "Contact Sensor", "name");
     contactSensorAttribute.setDescription("The sensor that monitors the fluid level");
   }
 

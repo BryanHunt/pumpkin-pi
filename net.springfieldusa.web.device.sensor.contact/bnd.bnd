@@ -1,0 +1,16 @@
+-buildpath: \
+	osgi.annotation;version=6.0.1,\
+	osgi.core;version=6.0,\
+	osgi.cmpn;version=6.0,\
+	javax.ws.rs;version=2.0,\
+	net.springfieldusa.web.json;version=1.0,\
+	net.springfieldusa.device.sensor.contact.api;version=latest
+
+-testpath: \
+	${junit}
+
+javac.source: 1.8
+javac.target: 1.8
+
+Bundle-Version: 1.0.1.${tstamp}
+Private-Package: net.springfieldusa.web.device.sensor.contact

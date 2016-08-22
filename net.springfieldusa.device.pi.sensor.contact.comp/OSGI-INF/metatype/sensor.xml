@@ -9,7 +9,7 @@
 			<Option label="PULL_DOWN" value="PULL_DOWN"/>
 		</AD>
 		<AD name="GPIO Pin Active High" id="activeHigh" type="Boolean" description="The GPIO pin assertion level" default="true"/>		
-		<AD name="Debounce Time" id="debounceTime" type="Long" description="The time in ms to wait before reporting a change" default="10000"/>		
+		<AD name="Debounce Time" id="debounceTime" type="Long" description="The time in ms to wait before reporting a change" default="1000"/>		
 	</OCD>
 	<Designate factoryPid="net.springfieldusa.device.pi.sensor.contact.comp.ContactSensorComponent">
 		<Object ocdref="net.springfieldusa.device.sensor.contact"/>
